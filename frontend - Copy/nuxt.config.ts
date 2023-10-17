@@ -26,8 +26,8 @@ export default defineNuxtConfig({
   plugins: [
     { src: "~/plugins/fontawesome.js", ssr: false },
     {
-      src: "~/plugins/vue-quill-editor.js",
-
+      src: "~/plugins/vue-quill-editor",
+      ssr: false,
       mode: "client",
     },
   ],

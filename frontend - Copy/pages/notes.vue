@@ -41,33 +41,8 @@
           </button>
         </div>
       </div>
-      <!-- <quil /> -->
-
-      <div id="toolbar"></div>
-
-      <div>
-        <quil
-          @blur="onEditorBlur($event)"
-          @focus="onEditorFocus($event)"
-          @change="onEditorChange($event)"
-          @ready="onEditorReady($event)"
-        />
-
-        <form ref="formInput">
-          <input
-            id="file"
-            ref="input"
-            name="files"
-            class="file"
-            type="file"
-            style="display: none"
-            @change="doUpload"
-          />
-        </form>
-      </div>
-
       <!-- ... (the rest of your template remains the same) ... -->
-      <!-- <div id="toolbar"></div>
+      <div id="toolbar"></div>
       <div
         ref="quill-editor"
         v-quill:myQuillEditor="editorOption"
@@ -89,7 +64,7 @@
             @change="doUpload"
           />
         </form>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
