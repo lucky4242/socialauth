@@ -12,7 +12,7 @@ import loginVue from '~/pages/login.vue'; import { NuxtLink } from
             <span>
               <font-awesome-icon :icon="['fab', 'github']" />
             </span>
-            {{ user }}
+            {{ user.username }}
           </p>
         </NuxtLink>
         <NuxtLink
@@ -35,11 +35,16 @@ import loginVue from '~/pages/login.vue'; import { NuxtLink } from
   </div>
 </template>
 <script setup>
-// const { find } = useStrapi();
-// console.log(find);
-// const loginTest = async () => {
-//   console.log(await find("user", "1"));
-// };
+import { onMounted, ref } from "vue";
+
+let user = ref(null);
+
+onMounted(async () => {
+  let _user = localStorage.userDetails;
+  user.value = JSON.parse(_user);
+  // console.log(user.value);
+});
+
 const base = useStrapi();
 
 const logout = async () => {
